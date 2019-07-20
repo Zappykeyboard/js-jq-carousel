@@ -3,14 +3,14 @@ $(document).ready(function () {
   $("#next-button").on("click", function () {
 
     //seleziono l'indice attivo
-    var theIndex = $("#images-container .active");
+    var theIndex = $("#images-container .active, #slider-indicator .active");
 
     //rimuovo la classe all'indice
     theIndex.removeClass("active");
 
     //se l'indice è l'ultimo elemento, torno al primo elemento
     if (theIndex.hasClass("last")) {
-      $("#images-container .first").addClass("active");
+      $("#images-container .first, #slider-indicator .first").addClass("active");
     } else {
       //attivo l'immagine successiva
       theIndex.next().addClass("active");
@@ -20,14 +20,14 @@ $(document).ready(function () {
   $("#prev-button").on("click", function () {
 
     //seleziono l'indice attivo
-    var theIndex = $("#images-container .active");
+    var theIndex = $("#images-container .active, #slider-indicator .active");
 
     //rimuovo la classe all'indice
     theIndex.removeClass("active");
 
     //se l'indice è il primo elemento, torno all'ultimo elemento
     if (theIndex.hasClass("first")) {
-      $("#images-container .last").addClass("active");
+      $("#images-container .last, #slider-indicator .last").addClass("active");
     } else {
       //attivo l'immagine precedente
       theIndex.prev().addClass("active");
